@@ -14,6 +14,7 @@
  */
 $min_allowDebugFlag = false;
 //###WPM-DEBUG-FLAG-BEFORE###
+$min_allowDebugFlag = false;
 //###WPM-DEBUG-FLAG-AFTER###
 
 
@@ -29,6 +30,7 @@ $min_allowDebugFlag = false;
  */
 $min_errorLogger = false;
 //###WPM-ERROR-LOGGER-BEFORE###
+$min_errorLogger = false;
 //###WPM-ERROR-LOGGER-AFTER###
 
 
@@ -47,6 +49,7 @@ $min_enableBuilder = false;
 //$min_cachePath = '/tmp';
 //$min_cachePath = preg_replace('/^\\d+;/', '', session_save_path());
 //###WPM-CACHE-PATH-BEFORE###
+$min_cachePath = '/home/sears/projects/gh-comm/wordpress/wp-content/plugins/wp-minify/cache/';
 //###WPM-CACHE-PATH-AFTER###
 
 /**
@@ -93,6 +96,7 @@ $min_serveOptions['bubbleCssImports'] = false;
  */
 $min_serveOptions['maxAge'] = 1800;
 //###WPM-CACHE-AGE-BEFORE###
+$min_serveOptions['maxAge'] = 2592000;
 //###WPM-CACHE-AGE-AFTER###
 
 /**
@@ -158,5 +162,4 @@ $min_uploaderHoursBehind = 0;
 $min_libPath = dirname(__FILE__) . '/lib';
 
 
-// try to disable output_compression (may not have an effect)
-ini_set('zlib.output_compression', '0');
+// try to disable output_compression (may not h

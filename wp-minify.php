@@ -461,7 +461,7 @@ class WPMinify {
 
       // append &debug if we need to
       if ($wpm_options['debug_nominify']) {
-        $debug_string = '&amp;debug=true';
+        $debug_string = '&debug=true';
       } else {
         $debug_string = '';
       }
@@ -469,7 +469,7 @@ class WPMinify {
       // append base directory if needed
       $base = $this->get_base();
       if ($base != '') {
-        $base_string = '&amp;b='.$base;
+        $base_string = '&b='.$base;
       } else {
         $base_string = '';
       }
@@ -477,13 +477,13 @@ class WPMinify {
       // get rid of any base directory specification in extra options
       $extra_minify_options = preg_replace('/(&|&amp;|\b)b=[^&]*/', '', trim($wpm_options['extra_minify_options']));
       if (trim($extra_minify_options) != '') {
-        $extra_string = '&amp;'.$extra_minify_options;
+        $extra_string = '&'.$extra_minify_options;
       } else {
         $extra_string = '';
       }
 
       // append last modified time
-      $latest_modified_string = '&amp;m='.$latest_modified;
+      $latest_modified_string = '&m='.$latest_modified;
 
       return array($base_url . '?f=' . implode(',', $files) . $debug_string . $base_string . $extra_string . $latest_modified_string);
     }
@@ -639,7 +639,8 @@ class WPMinify {
   }
 
   function get_base_from_siteurl() {
-    $site_url = trailingslashit(get_option('siteurl'));
+    //$site_url = trailingslashit(get_option('siteurl'));
+    $site_url = get_option('siteurl');
     return rtrim(preg_replace('/^https?:\/\/.*?\//', '', $site_url), '\\/');
   }
 
